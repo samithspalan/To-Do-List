@@ -88,5 +88,27 @@ li{
     list-style: none;
     font-size: 17px;
     box-shadow: 1px 1px 10px black,-1px -1px 8px black;
+    cursor: pointer;
+    position: relative;
+}
+li::before{
+    position:absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-image: url("circle.png");
+    background-size: cover;
+    left: 15px;
+    bottom: 5px;
+}
+.checked{
+    text-decoration: line-through;
+    background: #67d057;
 
+}
+.checked::before{
+    background-image: url("tick.png");
+    width: 25px;
+    height: 25px;
+    background-position: center;
 }
