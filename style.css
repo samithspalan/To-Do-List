@@ -112,3 +112,15 @@ li::before{
     height: 25px;
     background-position: center;
 }
+li span{
+    position: absolute;
+    right: 10px;
+    font-size: large;
+    width: 30px;
+    height: 30xp;
+    text-align: center;
+    border-radius: 50%;
+}
+li span:hover{
+    background: #00000046;
+}
