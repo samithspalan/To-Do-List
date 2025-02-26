@@ -13,7 +13,8 @@ function addtask(){
         let span=document.createElement("span");
         span.innerHTML="\u00d7";
         li.appendChild(span);
-
+        saveData();
+        listcontainer.scrollTo({top:listcontainer.scrollHeight,behavior:"smooth"})
     }
 }
 input.addEventListener("keydown",(e)=>{
@@ -21,3 +22,19 @@ input.addEventListener("keydown",(e)=>{
     addtask();
   }
 })
+listcontainer.addEventListener("click",(e)=>{
+    if(e.target.tagName==="LI"){
+        e.target.classList.toggle("checked");
+        
+    }else if(e.target.tagName==="SPAN"){
+        e.target.parentElement.remove();
+        saveData();
+    }
+})
+function saveData(){
+    localStorage.setItem("data",listcontainer.innerHTML);
+}
+function showData(){
+    listcontainer.innerHTML=localStorage.getItem("data");
+}
+showData();
